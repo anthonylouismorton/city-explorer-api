@@ -22,37 +22,16 @@ class Forecast{
 }
 
 app.get('/weather', (request, response) => {
+  //try{
   let city = request.query.searchQuery
   let lat = request.query.lat
-  let lon = request.query.lon
-  if(city){
-    city = city.toLowerCase()
-  }
-  try{
-  const searchedCity = data.find(x => x.city_name.toLowerCase() === city && x.lat === lat && x.lon === lon);
- 
-  
+  let lon = request.query.lons
+
   response.send(createweatherForecast(searchedCity))
-  }
-  catch(error){
-    errorHandler();
-  }
-  function errorHandler(error,text){
-    error = 500;
-    text ="City not found. Try another city"
-    response.status(error).send(text)
-  }
+
   
 });
-function createweatherForecast(searchedCity){
-  const dailyForecast = searchedCity.data.map((day) => {
-    const date = day.datetime;
-    const description = `Low of ${day.low_temp}, high of ${day.high_temp} with ${day.weather.description}`;
-    return new Forecast(date,description)
-  });
-  return dailyForecast;
-}
-//var Forecast = []
+
 
 app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
 
