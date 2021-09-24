@@ -10,7 +10,6 @@ function createPoster(movieData){
 async function getMovies(request, response) {
   const query = request.query.searchQuery;
   const movieURL = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_DB_API_KEY}&query=${query}&page1`
-  //const movieURL = `https://api.themoviedb.org/3/search/movie?api_key=db5eb7b4a487f5ccff2f78d3ccb7c8c0&query=Seattle&page1`
   const movieResponse = await axios.get(movieURL)
 
   response.status(200).send(createPoster(movieResponse))
