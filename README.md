@@ -20,12 +20,13 @@
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-Name of feature: city-explorer-api
 
-Estimate of time needed to complete: 6 hr
+Name of feature: city-explorer-api Day 5
 
-Start time: 5 pm
+Estimate of time needed to complete: 3
 
-Finish time: _____
+Start time: 8 AM
 
-Actual time needed to complete: _____
+Finish time: 3 PM
+
+Actual time needed to complete: 7 HR
